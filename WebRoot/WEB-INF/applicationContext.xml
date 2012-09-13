@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<import resource="classes/applicationContext.xml" /><!-- 导入src下的配置文件    相对路径 -->
+	<!-- 这个一定要有 -->
+	<bean id="applicationContext" class="org.apache.axis2.extensions.spring.receivers.ApplicationContextHolder"></bean>
+	
+	<!-- MyWebservice -->
+	<bean id="webUserManageSkeleton" class="web.service.WebUserManageSkeleton" >
+		<property name="userManage">
+			<ref bean="userManage" /><!-- src下applicationContext.xml中的service --> 
+		</property>
+	</bean>
+</beans>
+	

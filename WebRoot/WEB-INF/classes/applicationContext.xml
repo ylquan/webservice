@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.orgschema/aop"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+	<!-- 启动@AspectJ支持 -->
+	<!-- 添加spring ApplicationContextHolder Bean 在Spring 中注入Bean 代理器 -->  
+     
+        
+	<bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator"/>
+	<bean id="datasource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url" value="jdbc:mysql://192.168.123.16:3306/bio_new_test">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="111111"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="datasource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>bio/po/Role.hbm.xml</value>
+				<value>bio/po/UserInfo.hbm.xml</value>
+				<value>bio/po/UserRole.hbm.xml</value>
+				<value>bio/po/UserDetail.hbm.xml</value>
+				<value>bio/po/UserSystem.hbm.xml</value>
+				<value>bio/po/Feedback.hbm.xml</value>
+				<value>bio/po/Operation.hbm.xml</value>
+				<value>bio/po/Resource.hbm.xml</value>
+				<value>bio/po/RoleOperation.hbm.xml</value>
+				<value>bio/po/RoleResource.hbm.xml</value>
+				<value>bio/po/FileServer.hbm.xml</value>
+				<value>bio/po/UserFileserver.hbm.xml</value>
+				
+				</list>
+		</property>
+	</bean>
+	
+	
+	
+	
+	<bean id="roleDao" class="bio.dao.impl.RoleDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="feedbackDao" class="bio.dao.impl.FeedbackDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="operationDao" class="bio.dao.impl.OperationDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="resourceDao" class="bio.dao.impl.ResourceDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userInfoDao" class="bio.dao.impl.UserInfoDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userRoleDao" class="bio.dao.impl.UserRoleDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userDetailDao" class="bio.dao.impl.UserDetailDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userSystemDao" class="bio.dao.impl.UserSystemDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="roleOperationDao" class="bio.dao.impl.RoleOperationDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="roleResourceDao" class="bio.dao.impl.RoleResourceDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="fileServerDao" class="bio.dao.impl.FileServerDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userFileServerDao" class="bio.dao.impl.UserFileServerDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="feedbackService" class="bio.service.impl.FeedbackManage">
+		<property name="feedbackDao">
+			<ref bean="feedbackDao"/>
+		</property>
+	</bean>
+	<bean id="operationService" class="bio.service.impl.OperationManage">
+		<property name="operationDao">
+			<ref bean="operationDao"/>
+		</property>
+		<property name="roleOperationDao">
+			<ref bean="roleOperationDao"/>
+		</property>
+	</bean>
+	<bean id="resourceService" class="bio.service.impl.ResourceManage">
+		<property name="resourceDao">
+			<ref bean="resourceDao"/>
+		</property>
+		<property name="roleResourceDao">
+			<ref bean="roleResourceDao"/>
+		</property>
+	</bean>
+	<bean id="roleOperationService" class="bio.service.impl.RoleOperationManage">
+		<property name="roleOperationDao">
+			<ref bean="roleOperationDao"/>
+		</property>
+	</bean>
+	<bean id="roleResourceService" class="bio.service.impl.RoleResourceManage">
+		<property name="roleResourceDao">
+			<ref bean="roleResourceDao"/>
+		</property>
+	</bean>
+	<bean id="roleService" class="bio.service.impl.RoleManage">
+		<property name="roleDao">
+			<ref bean="roleDao"/>
+		</property>
+		<property name="userRoleDao">
+			<ref bean="userRoleDao"/>
+		</property>
+	</bean>
+	<bean id="userDetailService" class="bio.service.impl.UserDetailManage">
+		<property name="userDetailDao">
+			<ref bean="userDetailDao"/>
+		</property>
+		<property name="roleDao">
+			<ref bean="roleDao"/>
+		</property>
+	</bean>
+	<bean id="userInfoService" class="bio.service.impl.UserInfoManage">
+		<property name="userInfoDao">
+			<ref bean="userInfoDao"/>
+		</property>
+		<property name="roleDao">
+			<ref bean="roleDao"/>
+		</property>
+	</bean>
+	<bean id="userRoleService" class="bio.service.impl.UserRoleManage">
+		<property name="userRoleDao">
+			<ref bean="userRoleDao"/>
+		</property>
+		<property name="userInfoDao">
+			<ref bean="userInfoDao"/>
+		</property>
+		<property name="roleDao">
+			<ref bean="roleDao"/>
+		</property>
+	</bean>
+	<bean id="userSystemService" class="bio.service.impl.UserSystemManage">
+		<property name="userSystemDao">
+			<ref bean="userSystemDao"/>
+		</property>
+		<property name="roleDao">
+			<ref bean="roleDao"/>
+		</property>
+	</bean>
+	
+	<bean id="fileServerService" class="bio.service.impl.FileServerManage">
+		<property name="fileServerDao">
+			<ref bean="fileServerDao"/>
+		</property>
+	</bean>
+
+	<bean id="userFileServerService" class="bio.service.impl.UserFileServerManage">
+		<property name="userFileServerDao">
+			<ref bean="userFileServerDao" />
+		</property>
+	</bean>
+	
+
+	
+	<bean id="userManage" class="bio.user.manager.UserManage">
+		<property name="feedbackService">
+			<ref bean="feedbackService"/>
+		</property>
+		<property name="operationService">
+			<ref bean="operationService"/>
+		</property>
+		<property name="resourceService">
+			<ref bean="resourceService"/>
+		</property>
+		<property name="roleService">
+			<ref bean="roleService"/>
+		</property>
+		<property name="roleOperationService">
+			<ref bean="roleOperationService"/>
+		</property>
+		<property name="roleResourceService">
+			<ref bean="roleResourceService"/>
+		</property>
+		<property name="userDetailService">
+			<ref bean="userDetailService"/>
+		</property>
+		<property name="userInfoService">
+			<ref bean="userInfoService"/>
+		</property>
+		<property name="userRoleService">
+			<ref bean="userRoleService"/>
+		</property>
+		<property name="userSystemService">
+			<ref bean="userSystemService"/>
+		</property>
+		<property name="fileServerService">
+			<ref bean="fileServerService"/>
+		</property>
+		<property name="userFileServerService">
+			<ref bean="userFileServerService"/>
+		</property>
+		
+	</bean>
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="transactionInterceptor"
+		class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="add*">PROPAGATION_REQUIRED</prop>
+				<prop key="del*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	<bean
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<list>
+				<value>UserManage</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+		
+</beans>

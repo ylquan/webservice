@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: 1.6.0  Built on : May 17, 2011 (04:19:43 IST) -->
+<serviceGroup>
+
+
+
+    <service name="WebUserManage">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="web.service.WebUserManageMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">web.service.WebUserManageSkeleton</parameter>
+        <parameter name="useOriginalwsdl">false</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+           <parameter name="ServiceObjectSupplier">
+            org.apache.axis2.extensions.spring.receivers.SpringServletContextObjectSupplier
+        </parameter>
+       
+      
+			<parameter name="SpringBeanName">webUserManageSkeleton</parameter>
+            
+              
+        
+        
+        <operation name="viewRoleStatus" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewRoleStatus</actionMapping>
+            <outputActionMapping>urn:viewRoleStatusResponse</outputActionMapping>
+        </operation>
+        <operation name="addRole" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:addRole</actionMapping>
+            <outputActionMapping>urn:addRoleResponse</outputActionMapping>
+        </operation>
+        <operation name="viewResources" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewResources</actionMapping>
+            <outputActionMapping>urn:viewResourcesResponse</outputActionMapping>
+        </operation>
+        <operation name="viewResource" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewResource</actionMapping>
+            <outputActionMapping>urn:viewResourceResponse</outputActionMapping>
+        </operation>
+        <operation name="delFeedback" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:delFeedback</actionMapping>
+            <outputActionMapping>urn:delFeedbackResponse</outputActionMapping>
+        </operation>
+        <operation name="modUserStatus" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:modUserStatus</actionMapping>
+            <outputActionMapping>urn:modUserStatusResponse</outputActionMapping>
+        </operation>
+        <operation name="delFileServer" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:delFileServer</actionMapping>
+            <outputActionMapping>urn:delFileServerResponse</outputActionMapping>
+        </operation>
+        <operation name="delRoleResource" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:delRoleResource</actionMapping>
+            <outputActionMapping>urn:delRoleResourceResponse</outputActionMapping>
+        </operation>
+        <operation name="addRoleOperations" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:addRoleOperations</actionMapping>
+            <outputActionMapping>urn:addRoleOperationsResponse</outputActionMapping>
+        </operation>
+        <operation name="addFeedback" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:addFeedback</actionMapping>
+            <outputActionMapping>urn:addFeedbackResponse</outputActionMapping>
+        </operation>
+        <operation name="addResource" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:addResource</actionMapping>
+            <outputActionMapping>urn:addResourceResponse</outputActionMapping>
+        </operation>
+        <operation name="viewUserRole" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewUserRole</actionMapping>
+            <outputActionMapping>urn:viewUserRoleResponse</outputActionMapping>
+        </operation>
+        <operation name="addFileServer" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:addFileServer</actionMapping>
+            <outputActionMapping>urn:addFileServerResponse</outputActionMapping>
+        </operation>
+        <operation name="viewSubAdminDetail" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewSubAdminDetail</actionMapping>
+            <outputActionMapping>urn:viewSubAdminDetailResponse</outputActionMapping>
+        </operation>
+        <operation name="viewSubUsersDetail" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewSubUsersDetail</actionMapping>
+            <outputActionMapping>urn:viewSubUsersDetailResponse</outputActionMapping>
+        </operation>
+        <operation name="viewUserBase" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewUserBase</actionMapping>
+            <outputActionMapping>urn:viewUserBaseResponse</outputActionMapping>
+        </operation>
+        <operation name="addUser" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:addUser</actionMapping>
+            <outputActionMapping>urn:addUserResponse</outputActionMapping>
+        </operation>
+        <operation name="viewOperations" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewOperations</actionMapping>
+            <outputActionMapping>urn:viewOperationsResponse</outputActionMapping>
+        </operation>
+        <operation name="viewSubUsersBase" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewSubUsersBase</actionMapping>
+            <outputActionMapping>urn:viewSubUsersBaseResponse</outputActionMapping>
+        </operation>
+        <operation name="replyFeedback" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:replyFeedback</actionMapping>
+            <outputActionMapping>urn:replyFeedbackResponse</outputActionMapping>
+        </operation>
+        <operation name="viewSubUsersSystem" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewSubUsersSystem</actionMapping>
+            <outputActionMapping>urn:viewSubUsersSystemResponse</outputActionMapping>
+        </operation>
+        <operation name="delOperation" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:delOperation</actionMapping>
+            <outputActionMapping>urn:delOperationResponse</outputActionMapping>
+        </operation>
+        <operation name="viewUserSystem" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewUserSystem</actionMapping>
+            <outputActionMapping>urn:viewUserSystemResponse</outputActionMapping>
+        </operation>
+        <operation name="viewUserDetail" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewUserDetail</actionMapping>
+            <outputActionMapping>urn:viewUserDetailResponse</outputActionMapping>
+        </operation>
+        <operation name="viewSubUserBase" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewSubUserBase</actionMapping>
+            <outputActionMapping>urn:viewSubUserBaseResponse</outputActionMapping>
+        </operation>
+        <operation name="viewAllFileServer" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewAllFileServer</actionMapping>
+            <outputActionMapping>urn:viewAllFileServerResponse</outputActionMapping>
+        </operation>
+        <operation name="viewSubAdminBase" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewSubAdminBase</actionMapping>
+            <outputActionMapping>urn:viewSubAdminBaseResponse</outputActionMapping>
+        </operation>
+        <operation name="modFileServer" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:modFileServer</actionMapping>
+            <outputActionMapping>urn:modFileServerResponse</outputActionMapping>
+        </operation>
+        <operation name="viewSubUserDetail" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewSubUserDetail</actionMapping>
+            <outputActionMapping>urn:viewSubUserDetailResponse</outputActionMapping>
+        </operation>
+        <operation name="viewSubAdminRole" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewSubAdminRole</actionMapping>
+            <outputActionMapping>urn:viewSubAdminRoleResponse</outputActionMapping>
+        </operation>
+        <operation name="viewFeedback" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewFeedback</actionMapping>
+            <outputActionMapping>urn:viewFeedbackResponse</outputActionMapping>
+        </operation>
+        <operation name="addOperation" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:addOperation</actionMapping>
+            <outputActionMapping>urn:addOperationResponse</outputActionMapping>
+        </operation>
+        <operation name="viewSubAdminSystem" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewSubAdminSystem</actionMapping>
+            <outputActionMapping>urn:viewSubAdminSystemResponse</outputActionMapping>
+        </operation>
+        <operation name="logout" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:logout</actionMapping>
+            <outputActionMapping>urn:logoutResponse</outputActionMapping>
+        </operation>
+        <operation name="delRole" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:delRole</actionMapping>
+            <outputActionMapping>urn:delRoleResponse</outputActionMapping>
+        </operation>
+        <operation name="viewOperation" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewOperation</actionMapping>
+            <outputActionMapping>urn:viewOperationResponse</outputActionMapping>
+        </operation>
+        <operation name="addUserRole" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:addUserRole</actionMapping>
+            <outputActionMapping>urn:addUserRoleResponse</outputActionMapping>
+        </operation>
+        <operation name="delResource" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:delResource</actionMapping>
+            <outputActionMapping>urn:delResourceResponse</outputActionMapping>
+        </operation>
+        <operation name="modRoleStatus" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:modRoleStatus</actionMapping>
+            <outputActionMapping>urn:modRoleStatusResponse</outputActionMapping>
+        </operation>
+        <operation name="viewUserStatus" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewUserStatus</actionMapping>
+            <outputActionMapping>urn:viewUserStatusResponse</outputActionMapping>
+        </operation>
+        <operation name="viewFileServer" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewFileServer</actionMapping>
+            <outputActionMapping>urn:viewFileServerResponse</outputActionMapping>
+        </operation>
+        <operation name="addRoleResource" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:addRoleResource</actionMapping>
+            <outputActionMapping>urn:addRoleResourceResponse</outputActionMapping>
+        </operation>
+        <operation name="modUserRole" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:modUserRole</actionMapping>
+            <outputActionMapping>urn:modUserRoleResponse</outputActionMapping>
+        </operation>
+        <operation name="delUser" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:delUser</actionMapping>
+            <outputActionMapping>urn:delUserResponse</outputActionMapping>
+        </operation>
+        <operation name="viewSubUserRole" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewSubUserRole</actionMapping>
+            <outputActionMapping>urn:viewSubUserRoleResponse</outputActionMapping>
+        </operation>
+        <operation name="login" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:login</actionMapping>
+            <outputActionMapping>urn:loginResponse</outputActionMapping>
+        </operation>
+        <operation name="viewRole" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewRole</actionMapping>
+            <outputActionMapping>urn:viewRoleResponse</outputActionMapping>
+        </operation>
+        <operation name="viewSubRole" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewSubRole</actionMapping>
+            <outputActionMapping>urn:viewSubRoleResponse</outputActionMapping>
+        </operation>
+        <operation name="viewSubUserSystem" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:viewSubUserSystem</actionMapping>
+            <outputActionMapping>urn:viewSubUserSystemResponse</outputActionMapping>
+        </operation>
+        <operation name="delRoleOperations" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://service.web.bio">
+            <actionMapping>urn:delRoleOperations</actionMapping>
+            <outputActionMapping>urn:delRoleOperationsResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>
